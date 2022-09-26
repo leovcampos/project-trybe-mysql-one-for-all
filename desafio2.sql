@@ -1,5 +1,5 @@
 SELECT
-  COUNT(DISTINCT tra.music_id) AS cancoes,
+  COUNT(DISTINCT tra.track_id) AS cancoes,
   COUNT(DISTINCT art.artist_id) AS artistas,
   COUNT(DISTINCT alb.album_id) AS albuns
 FROM
