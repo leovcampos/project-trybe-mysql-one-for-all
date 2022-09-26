@@ -5,12 +5,12 @@ DROP DATABASE IF EXISTS SpotifyClone;
   CREATE TABLE SpotifyClone.Plan(
       plan_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
       plan_value DECIMAL(4, 2),
-      plan_name VARCHAR(80) NOT NULL,
+      plan_name VARCHAR(80) NOT NULL
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.Artist(
       artist_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-      artist_name VARCHAR(50) NOT NULL,
+      artist_name VARCHAR(50) NOT NULL
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.User(
@@ -53,8 +53,8 @@ DROP DATABASE IF EXISTS SpotifyClone;
     user_id INT NOT NULL,
     artist_id INT NOT NULL,
     PRIMARY KEY (user_id, artist_id),
-    FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id),
-    FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists(artist_id)
+    FOREIGN KEY (user_id) REFERENCES User (user_id),
+    FOREIGN KEY (artist_id) REFERENCES Artist (artist_id)
   ) engine = InnoDB;
 
   INSERT INTO SpotifyClone.Artist (artist_name)
@@ -97,7 +97,7 @@ DROP DATABASE IF EXISTS SpotifyClone;
     ('Somewhere Far Beyond', 5),
     ('I Put A Spell On You', 6);
 
-  INSERT INTO SpotifyClone.Track (track_name, duration_seconds, release_year, album_id, artist_id)
+  INSERT INTO SpotifyClone.Track (track_name, duration, release_year, album_id, artist_id)
   VALUES
     ('BREAK MY SOUL', 279, 2022, 1, 1),
     ('VIRGO’S GROOVE', 369, 2022, 1, 1),
@@ -118,8 +118,6 @@ VALUES
   (2, 10, '2022-08-05 08:05:17'),
   (2, 7, '2020-01-02 07:40:33'),
   (3, 10, '2020-11-13 16:55:13'),
-  (3, 2, '2020-12-05 18:38:30'),
-  (4, 8, '2021-08-15 17:10:10'),
   (5, 8, '2022-01-09 01:44:33'),
   (5, 5, '2020-08-06 15:23:43'),
   (6, 7, '2017-01-24 00:31:17'),
