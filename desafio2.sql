@@ -1,10 +1,10 @@
 SELECT
-  COUNT(DISTINCT spo.music_id) AS cancoes,
+  COUNT(DISTINCT tra.music_id) AS cancoes,
   COUNT(DISTINCT art.artist_id) AS artistas,
   COUNT(DISTINCT alb.album_id) AS albuns
 FROM
-  SpotifyClone.Track AS spo
+  SpotifyClone.Track AS tra
   INNER JOIN SpotifyClone.Album AS alb
-  ON al.album_id = m.album_id
+  ON alb.album_id = tra.album_id
   INNER JOIN SpotifyClone.Artist AS art
-  ON ar.artist_id = al.artist_id;
+  ON art.artist_id = alb.artist_id;
