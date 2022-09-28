@@ -8,11 +8,11 @@ INNER JOIN
 ON
     Tra.track_id = Repro.track_id
 INNER JOIN
-    SpotifyClone.User Use
+    SpotifyClone.User Us
 ON
-    Use.user_id = Repro.user_id
+    Us.user_id = Repro.user_id
 WHERE
-    Use.plan_id = 1 OR Use.plan_id = 3
+    Us.plan_id = 1 OR Us.plan_id = 3
 GROUP BY
     nome
 ORDER BY
