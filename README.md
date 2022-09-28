@@ -1,5 +1,7 @@
 # Boas vindas ao repositório do projeto One For All!
 
+* As queries em linguagem MySQL se encontram nos arquivos intitulados desafioN.sql;
+
 ## Desafio 1
 
 * Crie um banco com o nome de **`SpotifyClone`**.
